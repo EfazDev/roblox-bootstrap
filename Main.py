@@ -61,7 +61,7 @@ printWarnMessage("--- Preparing for OrangeBlox ---")
 printMainMessage("Please wait while we prepare the update for the OrangeBlox install!")
 zip_extract = pip_class.unzipFile(os.path.join(current_path_location, "Update.zip"), os.path.join(current_path_location, 'Update'), ["Main.py", "RobloxFastFlagsInstaller.py", "OrangeAPI.py", "Configuration.json", "Apps"])
 if zip_extract.returncode == 0:
-    for file in os.listdir(os.path.join(current_path_location, 'Update')):
+    for file in os.listdir(os.path.join(current_path_location)):
         if file == "PipHandler.py" or file == "AppIcon.icns" or file == "AppIcon.ico":
             os.remove(os.path.join(current_path_location, 'Update', file))
     for file in os.listdir(os.path.join(current_path_location, 'Update')):
