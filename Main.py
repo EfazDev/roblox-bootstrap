@@ -63,7 +63,7 @@ zip_extract = pip_class.unzipFile(os.path.join(current_path_location, "Update.zi
 if zip_extract.returncode == 0:
     for file in os.listdir(os.path.join(current_path_location)):
         if file == "PipHandler.py" or file == "AppIcon.icns" or file == "AppIcon.ico":
-            os.remove(os.path.join(current_path_location, 'Update', file))
+            os.remove(os.path.join(current_path_location, file))
     for file in os.listdir(os.path.join(current_path_location, 'Update')):
         src_path = os.path.join(os.path.join(current_path_location, 'Update'), file)
         dest_path = os.path.join(current_path_location, file)
