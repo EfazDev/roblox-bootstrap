@@ -73,6 +73,6 @@ if zip_extract.returncode == 0:
                 except Exception as e: printDebugMessage(f"Update Error for file ({src_path}): {str(e)}")
     printWarnMessage("--- Running Install for OrangeBlox ---")
     printMainMessage("Please wait while we start the OrangeBlox installer!")
-    silent_install = subprocess.run(args=[sys.executable, "Install.py", "--update-mode"], cwd=current_path_location)
+    silent_install = subprocess.run(args=([sys.executable, "Install.py"] if "-s" in sys.argv else [sys.executable, "Install.py", "--update-mode"]), cwd=current_path_location)
     if not (silent_install.returncode == 0): printErrorMessage("Bootstrap Installer failed.")
 else: printErrorMessage("Something went wrong!")
