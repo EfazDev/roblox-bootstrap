@@ -74,6 +74,8 @@ if zip_extract.returncode == 0:
             if not file.endswith(".json"):
                 try: shutil.copy2(src_path, dest_path)
                 except Exception as e: printDebugMessage(f"Update Error for file ({src_path}): {str(e)}")
+    os.remove(os.path.join(current_path_location, 'Update.zip'))
+    shutil.rmtree(os.path.join(current_path_location, 'Update'))
     printWarnMessage("--- Running Install for OrangeBlox ---")
     printMainMessage("Please wait while we start the OrangeBlox installer!")
     silent_install = subprocess.run(args=([sys.executable, "Install.py"] if "-s" in sys.argv else [sys.executable, "Install.py", "--update-mode"]), cwd=current_path_location)
