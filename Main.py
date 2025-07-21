@@ -55,7 +55,7 @@ printWarnMessage("--- Downloading OrangeBlox ---")
 status = PyKits.ProgressBar()
 class download_stat:
     def submit(self, info):
-        if status: status.submit(f"[UPDATE] Downloading OrangeBlox!", int((info.percent/10)*3))
+        if status: status.submit(f"[UPDATE] Downloading OrangeBlox!", int(info.percent))
 requests.download("https://github.com/EfazDev/orangeblox/archive/refs/heads/main.zip", os.path.join(current_path_location, 'Update.zip'), submit_status=download_stat())
 printWarnMessage("--- Preparing for OrangeBlox ---")
 printMainMessage("Please wait while we prepare the update for the OrangeBlox install!")
